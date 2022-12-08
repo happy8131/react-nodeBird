@@ -4,6 +4,7 @@ import { Menu, Input, Row, Col } from "antd";
 import { useState } from "react";
 import UserProfile from "./UserProfile";
 import LoginForm from "./LoginForm";
+import styled from "styled-components";
 
 const AppLayout = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,10 +18,7 @@ const AppLayout = ({ children }) => {
           <Link href="/profile">프로필</Link>
         </Menu.Item>
         <Menu.Item>
-          <Input.Search
-            enterButton
-            style={{ verticalAlign: "middle" }}
-          ></Input.Search>
+          <Input.Search enterButton></Input.Search>
         </Menu.Item>
         <Menu.Item>
           <Link href="/signup">회원가입</Link>
@@ -28,7 +26,11 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row>
         <Col xs={24} md={6}>
-          {isLoggedIn ? <UserProfile /> : <LoginForm />}
+          {isLoggedIn ? (
+            <UserProfile setIsLoggedIn={setIsLoggedIn} />
+          ) : (
+            <LoginForm setIsLoggedIn={setIsLoggedIn} />
+          )}
         </Col>
         <Col xs={24} md={12}>
           {children}
