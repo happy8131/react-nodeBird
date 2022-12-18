@@ -7,7 +7,7 @@ export const initialState = {
         nickname: "제로초",
       },
       content: "첫 번째 게시글 #해시태그 #익스프레스",
-      Imaages: [
+      Images: [
         { src: "file:///home/happy8131/%EC%82%AC%EC%A7%84/camping5.jpg" },
         { src: "/home/happy8131/사진/d.png" },
         { src: "/home/happy8131/사진/camping4.jpg" },
@@ -23,7 +23,7 @@ export const initialState = {
           User: {
             nickname: "hero",
           },
-          contenr: "얼른 사고싶어요~",
+          content: "얼른 사고싶어요~",
         },
       ],
     },

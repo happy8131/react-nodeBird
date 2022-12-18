@@ -4,7 +4,6 @@ import { Menu, Input, Row, Col } from "antd";
 import { useState } from "react";
 import UserProfile from "./UserProfile";
 import LoginForm from "./LoginForm";
-import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 const AppLayout = ({ children }) => {
@@ -13,16 +12,16 @@ const AppLayout = ({ children }) => {
   return (
     <div>
       <Menu mode="horizontal">
-        <Menu.Item>
+        <Menu.Item key="item">
           <Link href="/">노드버드</Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="item2">
           <Link href="/profile">프로필</Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="item3">
           <Input.Search enterButton></Input.Search>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="item4">
           <Link href="/signup">회원가입</Link>
         </Menu.Item>
       </Menu>
@@ -45,10 +44,6 @@ const AppLayout = ({ children }) => {
       </Row>
     </div>
   );
-};
-
-AppLayout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default AppLayout;
